@@ -1,0 +1,175 @@
+{
+  "step": 8,
+  "subStep": 0,
+  "stepsData": [
+    {
+      "data": {
+        "id": {
+          "label": "Ad Type",
+          "value": "7ae73939-0408-4366-9d03-6f7f5b85fc96",
+          "typeAd": "offer"
+        },
+        "nextValidator": true
+      },
+      "name": "ad_type"
+    },
+    {
+      "data": {
+        "id": {
+          "label": "Category",
+          "value": "e87e7959-03ef-4bd1-930d-4a96c5743108",
+          "typeAd": null
+        },
+        "nextValidator": true
+      },
+      "name": "category"
+    },
+    {
+      "data": {
+        "id": {
+          "id": "796f04d5-afaf-402b-a0be-d3658b66a0e4",
+          "value": "fragrance"
+        },
+        "nextValidator": true,
+        "inputSearchValue": {
+          "label": "Ad Title",
+          "value": "BYREDO Black Saffron Hair Mist 75ml"
+        }
+      },
+      "name": "search_product"
+    },
+    {
+      "data": {
+        "images": {
+          "label": "Image(s)",
+          "images": [
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            },
+            {
+              "src": "/place-ad/add-images/mock_image.jpeg"
+            }
+          ],
+          "nextValidator": true
+        }
+      },
+      "name": "add_images"
+    },
+    {
+      "data": {
+        "nextValidator": true,
+        "paymentMethods": {
+          "data": [
+            {
+              "id": "a9dde95a-6ce7-4e61-b18f-c1c4b9e97955",
+              "value": "Online Payment"
+            }
+          ],
+          "label": "Payment methods"
+        },
+        "deliveryMethods": {
+          "data": [
+            {
+              "id": "811c399e-3140-4a3b-a98e-2c6193f7f396",
+              "data": "1",
+              "value": "Delivery Service"
+            }
+          ],
+          "label": "Delivery",
+          "address": {
+            "id": "e33ff25b-2d48-4960-86cd-ea7cb639111c",
+            "city": "",
+            "street": "Perfume Unlimited LLC,  Plot No 597-427,  Opposite Le Chocolat (Green House),  Near Pidilite MEA Chemicals LLC,  Dubai Investment Park - 2,  Dubai (UAE).",
+            "emirate": "Dubai",
+            "zipcode": "",
+            "fullname": null,
+            "locality": null,
+            "last_name": "Jain",
+            "__typename": "customer_address",
+            "country_id": "5474425b-bb78-4dc5-8b48-1f52bd0b9587",
+            "first_name": "Vinita ",
+            "house_number": "Perfume Unlimited LLC,  Plot No 597-427,  Opposite Le Chocolat (Green House),  Near Pidilite MEA Chemicals LLC,  Dubai Investment Park - 2,  Dubai (UAE).",
+            "building_name": "Perfume Unlimited LLC",
+            "mobile_number": "0556852913",
+            "nearest_landmark": "  Near Pidilite MEA Chemicals LLC,  Dubai Investment Park - 2"
+          }
+        }
+      },
+      "name": "delivery_and_payment_methods"
+    },
+    {
+      "data": {
+        "lat": 24.9745179,
+        "lng": 55.1983055,
+        "nextValidator": true,
+        "inputAddressValue": {
+          "label": "Location",
+          "value": "Dubai Investment Park - 2 - Dubai - United Arab Emirates"
+        }
+      },
+      "name": "location"
+    },
+    {
+      "data": {
+        "mobile": {
+          "label": "Phone",
+          "value": "556852913",
+          "hidden": false
+        }
+      },
+      "name": "confirm_mobile_number"
+    },
+    {
+      "data": {
+        "label": "Status"
+      },
+      "name": "under_review_ad"
+    },
+    {
+      "data": {
+        "id": {
+          "label": "",
+          "value": ""
+        },
+        "nextValidator": false
+      },
+      "name": "property_type"
+    },
+    {
+      "data": {
+        "values": {
+          "brand": "BYREDO",
+          "price": "222.20",
+          "images": [
+            {
+              "src": "1_1720419518756.png",
+              "primary": 1,
+              "position": 0
+            }
+          ],
+          "condition": "New with tags",
+          "description": "<p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Top note includes Juniper Berries, Pomelo, Saffron</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Heart note of this fragrance consists Accord Cuir, Black Violet, Cristal Rose</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Base note captivates with Blonde Woods, Raspberry, Vetiver</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Specifications</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Fragrance Size</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">70 - 99 Ml</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Scents/Notes</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Fruity</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Base Note</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Blonde Woods, Raspberry, Vetiver</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Heart/Middle Note</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Accord Cuir, Black Violet, Cristal Rose</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Top Note</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Juniper Berries, Pomelo, Saffron</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Size</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">75 Ml</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Department</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Men</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Product Subtype</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">Perfume Mist</span></p><p class=\"lex-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Model Number</span><span style=\"white-space: pre-wrap;\">\t</span><span style=\"white-space: pre-wrap;\">7340032815535</span></p>"
+        }
+      },
+      "name": "product_detail"
+    }
+  ]
+}
