@@ -1,4 +1,24 @@
-# Add this to your workflow to trigger Databricks job on push
-- name: Run Databricks Job
-  run: |
-    databricks jobs run-now --job-id 456162756144167
+name: Databricks Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-databricks-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Databricks CLI
+        run: pip install databricks-cli
+
+      - name: Configure Databricks
+        env:
+          DATABRICKS_HOST: https://dbc-49c76cea-51a6.cloud.databricks.com/
+          DATABRICKS_TOKEN: dapi106f6a26fa9cd96543b4ebb7a87f8d05
+        run: |
+          databricks jobs run-now --job-id 456162756144167
