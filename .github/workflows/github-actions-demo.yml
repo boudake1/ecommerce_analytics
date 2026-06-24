@@ -18,7 +18,7 @@ jobs:
 
       - name: Configure Databricks
         env:
-          DATABRICKS_HOST: https://dbc-49c76cea-51a6.cloud.databricks.com/
-          DATABRICKS_TOKEN: dapi106f6a26fa9cd96543b4ebb7a87f8d05
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
         run: |
           databricks jobs run-now --job-id 456162756144167
