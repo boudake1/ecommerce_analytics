@@ -1,0 +1,12 @@
+main.py
+pyproject.toml
+ecommerce_analytics.egg-info/PKG-INFO
+ecommerce_analytics.egg-info/SOURCES.txt
+ecommerce_analytics.egg-info/dependency_links.txt
+ecommerce_analytics.egg-info/requires.txt
+ecommerce_analytics.egg-info/top_level.txt
+tests/test_customer_360.py
+tests/test_customers.py
+tests/test_events.py
+tests/test_product_performance.py
+tests/test_products.py
