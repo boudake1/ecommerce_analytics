@@ -14,7 +14,7 @@ def main(config_file: str):
          .getOrCreate()
     
      appConfig = load_config("config/config.json")
-     spark.sparkContext.setLogLevel("error")
+#     spark.sparkContext.setLogLevel("error")
 
 #     bronze_pipeline = BronzePipeline(spark, config)
 #     bronze_pipeline.run()
