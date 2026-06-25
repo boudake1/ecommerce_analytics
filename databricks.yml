@@ -1,0 +1,23 @@
+bundle:
+  name: pyspark-test
+
+workspace:
+  host: https://dbc-49c76cea-51a6.cloud.databricks.com
+
+resources:
+  jobs:
+    pyspark_job:
+      name: pyspark_job
+
+      environments:
+        - environment_key: default
+          spec:
+            client: "1"
+            dependencies:
+              - -r requirements.txt
+
+      tasks:
+        - task_key: run_pyspark
+          environment_key: default
+          spark_python_task:
+            python_file: ./main.py

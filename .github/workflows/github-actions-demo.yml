@@ -1,4 +1,4 @@
-name: Databricks Pipeline
+name: Deploy Databricks Pipeline
 
 on:
   push:
@@ -6,19 +6,25 @@ on:
       - main
 
 jobs:
-  run-databricks-job:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install Databricks CLI
-        run: pip install databricks-cli
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
 
-      - name: Configure Databricks
+      - name: Configure Databricks Auth
+        run: |
+          databricks auth login --host $DATABRICKS_HOST
         env:
           DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
-          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+
+      - name: Deploy Bundle
         run: |
-          databricks jobs run-now --job-id 456162756144167
+          databricks bundle deploy
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
