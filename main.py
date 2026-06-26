@@ -23,15 +23,11 @@ def main(config_file: str):
      silver_pipeline.run()
      gold_pipeline = GoldPipeline(spark, config)
      gold_pipeline.run()
-     spark.stop()
+#    spark.stop()
 
 if __name__ == "__main__":
      config_file = sys.argv[1]
      main(config_file)
-
-# if __name__ == "__main__":
-#     print("This is a placeholder for the main application logic. Please implement the main function to run the pipelines.")         
-
 
 
 
