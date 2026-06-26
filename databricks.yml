@@ -21,3 +21,5 @@ resources:
           environment_key: default
           spark_python_task:
             python_file: ./main.py
+            parameters:
+             - config/application-databricks.yaml

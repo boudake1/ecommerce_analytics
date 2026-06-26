@@ -1,4 +1,5 @@
 from pyspark.sql import SparkSession
+import sys
 from config.settings import load_config
 from pipelines.bronze_pipeline import BronzePipeline
 # from pipelines.silver_pipeline import SilverPipeline
@@ -25,7 +26,8 @@ def main(config_file: str):
      spark.stop()
 
 if __name__ == "__main__":
-     main("config/application.yaml")
+     config_file = sys.argv[1]
+     main(config_file)
 
 # if __name__ == "__main__":
 #     print("This is a placeholder for the main application logic. Please implement the main function to run the pipelines.")         

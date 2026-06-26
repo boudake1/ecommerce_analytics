@@ -1,0 +1,60 @@
+environment: local
+
+datasets:
+  - events
+  - customers
+  - products
+
+
+agregations:
+  - customer_360
+  - product_performance
+  - category_performance
+ 
+
+paths:
+
+  raw: /Volumes/test/default/data/raw
+
+  bronze: /Volumes/test/default/data/bronze
+
+  silver: data/silver
+
+  gold: /Volumes/test/default/data/gold
+
+events:
+
+  product:
+    - product_view
+    - wishlist
+
+  order:
+    - add_to_cart
+    - checkout
+    - purchase
+
+  customer:
+    - login
+    - logout
+    - register
+
+  search:
+    - search
+    - filter
+
+session:
+
+  timeout_minutes: 30
+
+quality:
+
+  remove_duplicates: true
+
+  mandatory_columns:
+    - event_id
+    - user_id
+    - event_type
+
+processing:
+
+  partition_column: event_date
