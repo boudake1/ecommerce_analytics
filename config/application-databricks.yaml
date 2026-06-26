@@ -18,7 +18,7 @@ paths:
 
   bronze: /Volumes/test/default/data/bronze
 
-  silver: data/silver
+  silver: /Volumes/test/default/data/silver
 
   gold: /Volumes/test/default/data/gold
 
