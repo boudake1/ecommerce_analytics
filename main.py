@@ -14,7 +14,7 @@ def main(config_file: str):
          .appName("EcommerceAnalytics") \
          .getOrCreate()
     
-     appConfig = load_config("config/config.json")
+# appConfig = load_config("config/config.json")
 #     spark.sparkContext.setLogLevel("error")
 
      bronze_pipeline = BronzePipeline(spark, config)
