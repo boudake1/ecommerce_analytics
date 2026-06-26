@@ -11,10 +11,11 @@ class GoldPipeline:
         return self.spark.read.parquet(f"{silver_path}/{dataset}")
 
     def aggregate(self, aggregation):
+        silver_path = self.config.get("paths").get("silver")    
         aggregation_func = AGGREGATIONS.get(aggregation)
         if not aggregation_func:
             raise ValueError(f"Aggregation function not found for dataset: {aggregation}")
-        return aggregation_func(self.spark)
+        return aggregation_func(self.spark,silver_path)
     
     def save_gold(self, df, aggregation):
         gold_path = self.config.get("paths").get("gold")

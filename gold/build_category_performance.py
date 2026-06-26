@@ -3,9 +3,10 @@ from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 
 
-def build_category_performance(spark: SparkSession) -> DataFrame:
-    events_df = spark.read.parquet("data/silver/events")
-    product_df = spark.read.parquet("data/silver/products")
+def build_category_performance(spark: SparkSession,silver_path: str) -> DataFrame:
+
+    events_df = spark.read.parquet(f"{silver_path}/events")
+    product_df = spark.read.parquet(f"{silver_path}/products")
     
     category_window = Window.partitionBy("categoryName")
 

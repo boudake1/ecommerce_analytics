@@ -1,11 +1,11 @@
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as F
 
-def build_customer_360(spark: SparkSession) -> DataFrame:
+def build_customer_360(spark: SparkSession,silver_path: str) -> DataFrame:
     # Load silver layer datasets
-    events_df = spark.read.parquet("data/silver/events")
-    customers_df = spark.read.parquet("data/silver/customers")
-    products_df = spark.read.parquet("data/silver/products")
+    events_df = spark.read.parquet(f"{silver_path}/events")
+    customers_df = spark.read.parquet(f"{silver_path}/customers")
+    products_df = spark.read.parquet(f"{silver_path}/products")
     
     # For this example, we assume 'events' contains purchase information
     # and 'products' contains product categories
