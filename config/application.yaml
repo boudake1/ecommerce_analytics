@@ -23,6 +23,17 @@ paths:
 
   gold: data/gold
 
+
+delta_paths:
+
+  raw: data/raw
+
+  bronze: delta-data/bronze
+
+  silver: delta-data/silver
+
+  gold: data/gold
+
 events:
 
   product:
