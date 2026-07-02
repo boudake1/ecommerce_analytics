@@ -16,7 +16,7 @@ paths:
 
   raw: /Volumes/test/default/data/raw
 
-  bronze: /Volumes/test/default/data/bronze
+  bronze: /Volumes/ecommerce/bronze/data
 
   silver: /Volumes/test/default/data/silver
 
@@ -31,7 +31,7 @@ delta_paths:
   silver: /Volumes/test/default/delta-data/silver
 
   gold: /Volumes/test/default/data/gold
-  
+
 events:
 
   product:
