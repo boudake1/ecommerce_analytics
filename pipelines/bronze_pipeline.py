@@ -37,6 +37,17 @@ class BronzePipeline:
             )
         )
 
+    def saveDeltaAsTable(self, dataset, df):
+        """Save dataset to bronze layer in Delta format"""
+        (
+            df.write
+            .format("delta")
+            .mode("overwrite")
+            .saveAsTable(
+                f"bronze.{dataset}"
+            )
+        )    
+
     def run(self):
         """Run the bronze pipeline"""
         datasets = self.config.get("datasets")
@@ -44,3 +55,4 @@ class BronzePipeline:
             df = self.load(dataset)
             self.save(dataset, df)
             self.saveDelta(dataset, df)
+            self.saveDeltaAsTable(dataset, df)
