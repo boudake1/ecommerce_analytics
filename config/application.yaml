@@ -10,7 +10,9 @@ agregations:
   - customer_360
   - product_performance
   - category_performance
+  - customerFavoriteProduct
   - prospect_user
+ 
  
 
 paths:

@@ -1,5 +1,6 @@
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as F
+from pyspark.sql.window import Window
 
 def build_customer_360(spark: SparkSession,silver_path: str) -> DataFrame:
     # Load silver layer datasets
@@ -34,7 +35,6 @@ def build_customer_360(spark: SparkSession,silver_path: str) -> DataFrame:
         .join(customer_purchases, F.col("user_id") == F.col("user_id"), "left_outer")
         .select(
             F.col("user_id").alias("customer_id"),
-            F.col("name"),
             F.col("purchase_count"),
             F.col("total_spent"),
             F.col("first_purchase_date"),
@@ -44,3 +44,34 @@ def build_customer_360(spark: SparkSession,silver_path: str) -> DataFrame:
     )
     
     return customer_360
+
+
+def customerFavoriteProduct(spark: SparkSession,silver_path: str) -> DataFrame:
+    # Load silver layer datasets
+    events_df = spark.read.parquet(f"{silver_path}/events")
+    customers_df = spark.read.parquet(f"{silver_path}/customers")
+
+    window_spec = Window.partitionBy("user_id")
+    window_spec_user_product = Window.partitionBy("user_id", "product_id")
+    customer_purchases = (
+        events_df
+        .filter(F.col("event_type") == "purchase")
+        .withColumn("prev_amount", F.lag("amount").over(window_spec))
+        .withColumn("next_amount", F.lead("amount").over(window_spec))
+        .withColumn("purchase_count", F.count("*").over(window_spec_user_product))
+    )
+    
+    # Join with customers table
+    favortiteProduct = (
+        customers_df
+        .join(customer_purchases, F.col("user_id") == F.col("user_id"), "left_outer")
+        .select(
+            F.col("user_id").alias("customer_id"),
+            F.col("name"),
+            F.col("prev_amount"),
+            F.col("next_amount"),
+            F.col("purchase_count")
+        )
+    )
+    
+    return favortiteProduct
