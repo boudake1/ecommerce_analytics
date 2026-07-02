@@ -34,6 +34,7 @@ def build_customer_360(spark: SparkSession,silver_path: str) -> DataFrame:
         .join(customer_purchases, F.col("user_id") == F.col("user_id"), "left_outer")
         .select(
             F.col("user_id").alias("customer_id"),
+            F.col("name"),
             F.col("purchase_count"),
             F.col("total_spent"),
             F.col("first_purchase_date"),
