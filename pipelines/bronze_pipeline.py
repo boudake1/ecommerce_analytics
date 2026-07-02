@@ -55,4 +55,4 @@ class BronzePipeline:
             df = self.load(dataset)
             self.save(dataset, df)
             self.saveDelta(dataset, df)
-            self.saveDeltaAsTable(dataset, df)
+            #self.saveDeltaAsTable(dataset, df)

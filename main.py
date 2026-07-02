@@ -11,12 +11,13 @@ from delta import configure_spark_with_delta_pip
 def main(config_file: str):
 # Create Spark session
      config = Config(config_file)
-     builder = SparkSession.builder \
+     spark = SparkSession.builder \
          .appName("EcommerceAnalytics") \
-         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
-         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") 
-         #.getOrCreate()
-     spark = configure_spark_with_delta_pip(builder).getOrCreate()
+         .getOrCreate()
+         #.config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+         #.config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") 
+         
+     #spark = configure_spark_with_delta_pip(builder).getOrCreate()
 # appConfig = load_config("config/config.json")
 #     spark.sparkContext.setLogLevel("error")
 

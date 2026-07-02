@@ -51,13 +51,13 @@ def customerFavoriteProduct(spark: SparkSession,silver_path: str) -> DataFrame:
     events_df = spark.read.parquet(f"{silver_path}/events")
     customers_df = spark.read.parquet(f"{silver_path}/customers")
 
-    window_spec = Window.partitionBy("user_id")
-    window_spec_user_product = Window.partitionBy("user_id", "product_id")
+    window_spec = Window.partitionBy("user_id").orderBy("price")
+    window_spec_user_product = Window.partitionBy("user_id", "product_id").orderBy("price")
     customer_purchases = (
         events_df
         .filter(F.col("event_type") == "purchase")
-        .withColumn("prev_amount", F.lag("amount").over(window_spec))
-        .withColumn("next_amount", F.lead("amount").over(window_spec))
+        .withColumn("prev_amount", F.lag("price").over(window_spec))
+        .withColumn("next_amount", F.lead("price").over(window_spec))
         .withColumn("purchase_count", F.count("*").over(window_spec_user_product))
     )
     
