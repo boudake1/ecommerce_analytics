@@ -21,7 +21,7 @@ class GoldPipeline:
         gold_path = self.config.get("paths").get("gold")
         df.write.mode("overwrite").parquet(f"{gold_path}/{aggregation}")
     
-    
+
     def saveDeltaAsTable(self, df, aggregation):
         """Save aggregation to gold layer in Delta format"""
         (
@@ -40,3 +40,4 @@ class GoldPipeline:
             self.save_gold(gold_df, aggregation)
             gold_df.show(10, False)
             print(gold_df.count())
+            self.saveDeltaAsTable(gold_df, aggregation) 
