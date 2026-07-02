@@ -14,13 +14,13 @@ agregations:
 
 paths:
 
-  raw: /Volumes/test/default/data/raw
+  raw: /Volumes/ecommerce/raw/data
 
   bronze: /Volumes/ecommerce/bronze/data
 
-  silver: /Volumes/test/default/data/silver
+  silver: /Volumes/ecommerce/silver/data
 
-  gold: /Volumes/test/default/data/gold
+  gold: /Volumes/ecommerce/gold/data
 
 delta_paths:
 
