@@ -44,7 +44,7 @@ class BronzePipeline:
             .format("delta")
             .mode("overwrite")
             .saveAsTable(
-                f"bronze.{dataset}"
+                f"ecommerce.bronze.{dataset}"
             )
         )    
 
